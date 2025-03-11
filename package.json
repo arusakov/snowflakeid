@@ -3,6 +3,9 @@
   "version": "",
   "description": "Snowflake ID generator",
   "main": "index.js",
+  "files": [
+    "index.js"
+  ],
   "scripts": {
     "build": "tsc --outDir .",
     "compile": "tsc --noEmit -p .",
