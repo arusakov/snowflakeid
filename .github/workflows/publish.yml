@@ -26,6 +26,6 @@ jobs:
           PACKAGE_JSON=$(node -p "const p = require('./package'); p.version = '${VERSION:1}'; JSON.stringify(p, null, 2)")
           echo $PACKAGE_JSON > package.json
 
-      - run: npm publish
+      - run: npm publish --access=public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
