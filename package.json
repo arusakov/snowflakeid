@@ -3,6 +3,7 @@
   "version": "",
   "description": "Snowflake ID generator",
   "main": "index.js",
+  "types": "index.d.ts",
   "files": [
     "index.js"
   ],
