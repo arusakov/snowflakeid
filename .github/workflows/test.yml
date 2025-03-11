@@ -22,19 +22,13 @@ jobs:
 
       - run: npm run test
 
-      # - if: env.COVERAGE != 'true'
-      #   run: yarn test:all
-      #   env:
-      #     REDIS_HOST: redis
-      #     REDIS_PORT: 6379
+      - run: yarn test:coverage -- --test-reporter=lcov --test-reporter-destination=.coverage/lcov.info 
 
-      # - if: env.COVERAGE == 'true'
-      #   run: apk add git curl gnupg coreutils
+      - run: apk add git curl gnupg coreutils
 
-      # - if: env.COVERAGE == 'true'
-      #   uses: codecov/codecov-action@v4
-      #   with:
-      #     fail_ci_if_error: true
-      #     file: ./coverage/lcov.info
-      #     os: alpine
-      #     token: ${{ secrets.CODECOV_TOKEN }}
+      - uses: codecov/codecov-action@v4
+        with:
+          fail_ci_if_error: true
+          file: ./coverage/lcov.info
+          os: alpine
+          token: ${{ secrets.CODECOV_TOKEN }}
