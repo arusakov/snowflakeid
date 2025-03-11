@@ -1,0 +1,31 @@
+{
+  "name": "snowflakeid",
+  "version": "0.1.0",
+  "description": "Snowflake ID generator",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc --outDir .",
+    "compile": "tsc --noEmit -p .",
+    "test": "TS_NODE_PROJECT=test/tsconfig.json node --test -r ts-node/register"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arusakov/snowflakeid.git"
+  },
+  "keywords": [
+    "id",
+    "snowflake",
+    "timestamp"
+  ],
+  "author": "arusakov <aleksandr.s.rusakov@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/arusakov/snowflakeid/issues"
+  },
+  "homepage": "https://github.com/arusakov/snowflakeid#readme",
+  "devDependencies": {
+    "@types/node": "^22.13.10",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.2"
+  }
+}
