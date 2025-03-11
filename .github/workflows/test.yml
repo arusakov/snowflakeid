@@ -20,7 +20,7 @@ jobs:
 
       - run: npm run compile:test
 
-      - run: yarn test
+      - run: npm run test
 
       # - if: env.COVERAGE != 'true'
       #   run: yarn test:all
