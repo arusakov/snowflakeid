@@ -1,5 +1,5 @@
 {
-  "name": "snowflakeid",
+  "name": "@arusakov/snowflakeid",
   "version": "",
   "description": "Snowflake ID generator",
   "main": "index.js",
