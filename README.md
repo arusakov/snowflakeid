@@ -1,5 +1,8 @@
 # SnowflakeId
 
+![test](https://github.com/arusakov/snowflake/actions/workflows/test.yml/badge.svg?branch=main)
+[![codecov](https://codecov.io/gh/arusakov/snowflakeid/graph/badge.svg?token=B7OKVZPRIJ)](https://codecov.io/gh/arusakov/snowflakeid)
+
 ```javascript
 
 const customEpoch = new Date('2025-01-01').getTime()
