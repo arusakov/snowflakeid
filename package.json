@@ -1,6 +1,6 @@
 {
   "name": "snowflakeid",
-  "version": "0.1.0",
+  "version": "",
   "description": "Snowflake ID generator",
   "main": "index.js",
   "scripts": {
