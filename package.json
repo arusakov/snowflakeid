@@ -6,6 +6,7 @@
   "scripts": {
     "build": "tsc --outDir .",
     "compile": "tsc --noEmit -p .",
+    "compile:test": "tsc --noEmit -p test",
     "test": "TS_NODE_PROJECT=test/tsconfig.json node --test -r ts-node/register"
   },
   "repository": {
