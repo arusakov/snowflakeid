@@ -1,0 +1,40 @@
+name: test
+
+on:
+  push:
+    branches:
+      - '*'
+    tags-ignore:
+      - '*'
+
+jobs:
+  test:
+
+    runs-on: ubuntu-latest
+    container: node:20-alpine
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - run: npm ci
+
+      - run: npm run compile
+
+      - run: yarn test
+
+      # - if: env.COVERAGE != 'true'
+      #   run: yarn test:all
+      #   env:
+      #     REDIS_HOST: redis
+      #     REDIS_PORT: 6379
+
+      # - if: env.COVERAGE == 'true'
+      #   run: apk add git curl gnupg coreutils
+
+      # - if: env.COVERAGE == 'true'
+      #   uses: codecov/codecov-action@v4
+      #   with:
+      #     fail_ci_if_error: true
+      #     file: ./coverage/lcov.info
+      #     os: alpine
+      #     token: ${{ secrets.CODECOV_TOKEN }}
