@@ -33,7 +33,7 @@ describe('SnowflakeId', () => {
         const id = new SnowflakeId(0, 0)
         const now = Date.now()
         
-        equal(id.generate(), BigInt(now << 22))
+        equal(id.generate(), BigInt(now) << 22n)
       })
 
       it('epoch = 2025-01-01', () => {
@@ -41,7 +41,7 @@ describe('SnowflakeId', () => {
         const id = new SnowflakeId(epoch, 0)
         const now = Date.now()
 
-        equal( id.generate(), BigInt((now - epoch) << 22))
+        equal( id.generate(), BigInt(now - epoch) << 22n)
       })
 
       it('custom nodeId', () => {
@@ -49,16 +49,16 @@ describe('SnowflakeId', () => {
         const id = new SnowflakeId(0, nodeId)
         const now = Date.now()
 
-        equal(id.generate(), BigInt((now << 22) | (nodeId << 12)))
+        equal(id.generate(), (BigInt(now) << 22n) | BigInt(nodeId << 12))
       })
 
       it('sequance generation', () => {
         const id = new SnowflakeId(0, 0)
         const now = Date.now()
 
-        equal(id.generate(), BigInt((now << 22) | 0))
-        equal(id.generate(), BigInt((now << 22) | 1))
-        equal(id.generate(), BigInt((now << 22) | 2))
+        equal(id.generate(), (BigInt(now) << 22n) | 0n)
+        equal(id.generate(), (BigInt(now) << 22n) | 1n)
+        equal(id.generate(), (BigInt(now) << 22n) | 2n)
       })
 
     })

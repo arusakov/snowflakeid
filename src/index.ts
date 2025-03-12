@@ -21,13 +21,13 @@ export class SnowflakeId {
     generate() {
         const timestamp = Date.now() - this.epoch
 
-        if (timestamp !== this.timestamp) {
+        if (this.timestamp < timestamp) {
             this.timestamp = timestamp
             this.counter = 0n
         }
 
         return (
-            BigInt(timestamp << 22) |
+            (BigInt(timestamp) << 22n) |
             this.nodeId | // already shifted
             (this.counter++) // postfix increment
         )
