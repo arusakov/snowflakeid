@@ -24,10 +24,13 @@ export class SnowflakeId {
         if (this.timestamp < timestamp) {
             this.timestamp = timestamp
             this.counter = 0n
+        } else if (this.counter >= 4096) { // 2 ** 12
+            this.timestamp = timestamp + 1
+            this.counter = 0n
         }
 
         return (
-            (BigInt(timestamp) << 22n) |
+            (BigInt(this.timestamp) << 22n) |
             this.nodeId | // already shifted
             (this.counter++) // postfix increment
         )
